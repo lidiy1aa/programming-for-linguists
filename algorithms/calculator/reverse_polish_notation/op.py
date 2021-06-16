@@ -79,7 +79,7 @@ class Op(Element, metaclass=OpMeta):
         return Digit(res)
 
     def __gt__(self, other: 'Op') -> bool:
-        pass
+        return self.priority > other.priority
 
     def __eq__(self, other: 'Op') -> bool:
-        pass
+        return self.symbol == other.symbol

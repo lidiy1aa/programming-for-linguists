@@ -23,6 +23,7 @@ class ReversePolishNotation:
         Put the element to the RPN
         :param element: element to put
         """
+        self._expression_queue.put(element)
 
     def __iter__(self):
         return self

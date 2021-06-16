@@ -9,3 +9,4 @@ class Element:
     """
     Base class for any element in reverse polish notation
     """
+    pass

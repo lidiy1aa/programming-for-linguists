@@ -21,8 +21,10 @@ class Digit(Element):
         """
         Magic method to present an instance of this class as string
         """
+        return str(self.digit)
 
     def __eq__(self, other: 'Digit') -> bool:
         """
         Magic method to compare instances of Digit class
         """
+        return self.digit == other.digit
