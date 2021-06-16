@@ -52,24 +52,24 @@ class ReversePolishNotationConverter:
         while not state.expression_in_infix_notation.empty():
             symbol = state.expression_in_infix_notation.top()
 
-            if ReversePolishNotationConverter.is_part_of_digit(symbol)
+            if ReversePolishNotationConverter.is_part_of_digit(symbol):
                 digit = ReversePolishNotationConverter.read_digit(state)
                 state.expression_in_infix_notation.put(digit)
                 continue
 
             operator = OpFactory.get_op_by_symbol(symbol)
 
-            if ReversePolishNotationConverter.is_open_bracket(operator)
+            if ReversePolishNotationConverter.is_open_bracket(operator):
                 state.stack.push(operator)
                 state.expression_in_infix_notation.get()
                 continue
 
-            if ReversePolishNotationConverter.is_open_bracket(operator)
+            if ReversePolishNotationConverter.is_open_bracket(operator):
                 state.pop_from_stack_until_opening_bracket()
                 state.expression_in_infix_notation.get()
                 continue
 
-            if ReversePolishNotationConverter.is_binary_operation(operator)
+            if ReversePolishNotationConverter.is_binary_operation(operator):
                 ReversePolishNotationConverter.pop_from_stack_until_prioritizing(operator)
                 state.expression_in_infix_notation.get()
             else:
